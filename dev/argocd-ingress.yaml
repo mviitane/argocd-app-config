@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: argocd-ingress
+  namespace: argocd
+spec:
+  rules:
+  - host: argocd.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: argocd-server
+          servicePort: 443
